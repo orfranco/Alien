@@ -1,0 +1,507 @@
+<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" FontFamily="Segoe UI" FontSize="12">
+  <FlowDocument.Tag><![CDATA[{
+  "timestamp": "2024-10-05 21:47:52",
+  "files": {
+    "C:\\Users\\97250\\Desktop\\AbeltonXsens\\Alien C++\\alien_main.vcxproj": {
+      "before": "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",
+      "after": "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"
+    }
+  }
+}]]></FlowDocument.Tag>
+  <Section Margin="0,24" TextAlignment="Center">
+    <Paragraph FontSize="24" FontWeight="Bold" Margin="12,0">
+      <LineBreak />
+      <Span Foreground="Gray">Qt Visual Studio Tools</Span>
+    </Paragraph>
+    <Paragraph FontSize="42" Margin="12,0" FontWeight="Bold">
+      <Span TextDecorations="Underline">Project Format Conversion</Span>
+    </Paragraph>
+    <Paragraph Margin="12,8" FontSize="18">
+      <Span>Report generated on 2024-10-05 21:47:52</Span>
+    </Paragraph>
+  </Section>
+  <Section>
+    <Paragraph FontSize="32" FontWeight="Bold" Margin="12,0">
+      <Span>Files</Span>
+    </Paragraph>
+    <Paragraph Margin="24,12,0,0">
+      <Span FontFamily="Consolas" FontSize="14" Background="WhiteSmoke"><![CDATA[C:\Users\97250\Desktop\AbeltonXsens\Alien C++\alien_main.vcxproj]]></Span>
+      <LineBreak />
+      <Hyperlink NavigateUri="file://C:\Users\97250\Desktop\AbeltonXsens\Alien C++\alien_main.vcxproj?before">[Before]</Hyperlink>
+      <Hyperlink NavigateUri="file://C:\Users\97250\Desktop\AbeltonXsens\Alien C++\alien_main.vcxproj?after">[After]</Hyperlink>
+      <Hyperlink NavigateUri="file://C:\Users\97250\Desktop\AbeltonXsens\Alien C++\alien_main.vcxproj?diff&amp;before&amp;after">
+                        [Diff before/after]
+                    </Hyperlink>
+      <Hyperlink NavigateUri="file://C:\Users\97250\Desktop\AbeltonXsens\Alien C++\alien_main.vcxproj?diff&amp;before&amp;current">
+                        [Diff before/current]
+                    </Hyperlink>
+      <Hyperlink NavigateUri="file://C:\Users\97250\Desktop\AbeltonXsens\Alien C++\alien_main.vcxproj?diff&amp;after&amp;current">
+                        [Diff after/current]
+                    </Hyperlink>
+      <LineBreak />
+    </Paragraph>
+  </Section>
+  <Section>
+    <Paragraph FontSize="32" FontWeight="Bold" Margin="12,0">
+      <Span>Changes</Span>
+    </Paragraph>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Converting custom build steps to Qt/MSBuild items]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[C:\Users\97250\Desktop\AbeltonXsens\Alien C++\alien_main.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span><![CDATA[      ]]></Span><Span Background="LightCoral"><![CDATA[<AdditionalIncludeDirectories>$]]></Span><Span><![CDATA[(ProjectDir)XsensSdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span><![CDATA[      ]]></Span><Span Background="LightGreen"><![CDATA[<AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;$]]></Span><Span><![CDATA[(ProjectDir)XsensSdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span><![CDATA[      ]]></Span><Span Background="LightCoral"><![CDATA[<AdditionalIncludeDirectories>$]]></Span><Span><![CDATA[(ProjectDir)XsensSdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span><![CDATA[      ]]></Span><Span Background="LightGreen"><![CDATA[<AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;$]]></Span><Span><![CDATA[(ProjectDir)XsensSdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span><![CDATA[      ]]></Span><Span Background="LightCoral"><![CDATA[<AdditionalIncludeDirectories>$]]></Span><Span><![CDATA[(ProjectDir)XsensSdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span><![CDATA[      ]]></Span><Span Background="LightGreen"><![CDATA[<AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;$]]></Span><Span><![CDATA[(ProjectDir)XsensSdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span><![CDATA[      ]]></Span><Span Background="LightCoral"><![CDATA[<AdditionalIncludeDirectories>$]]></Span><Span><![CDATA[(ProjectDir)XsensSdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span><![CDATA[      ]]></Span><Span Background="LightGreen"><![CDATA[<AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;$]]></Span><Span><![CDATA[(ProjectDir)XsensSdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Enabling multi-processor compilation]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[C:\Users\97250\Desktop\AbeltonXsens\Alien C++\alien_main.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[      <MultiProcessorCompilation>true</MultiProcessorCompilation>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[      <MultiProcessorCompilation>true</MultiProcessorCompilation>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[      <MultiProcessorCompilation>true</MultiProcessorCompilation>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[      <MultiProcessorCompilation>true</MultiProcessorCompilation>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Project format version]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[C:\Users\97250\Desktop\AbeltonXsens\Alien C++\alien_main.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[    <Keyword>QtVS_v304</Keyword>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Fallback for QTMSBUILD environment variable]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[C:\Users\97250\Desktop\AbeltonXsens\Alien C++\alien_main.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Default Qt properties]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[C:\Users\97250\Desktop\AbeltonXsens\Alien C++\alien_main.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  <Import Project="$(QtMsBuild)\qt_defaults.props" Condition="Exists('$(QtMsBuild)\qt_defaults.props')" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Qt build settings]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[C:\Users\97250\Desktop\AbeltonXsens\Alien C++\alien_main.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Warn if Qt/MSBuild is not found]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[C:\Users\97250\Desktop\AbeltonXsens\Alien C++\alien_main.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') OR !Exists('$(QtMsBuild)\Qt.props')">]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  </Target>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Qt property sheet]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[C:\Users\97250\Desktop\AbeltonXsens\Alien C++\alien_main.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[    <Import Project="$(QtMsBuild)\Qt.props" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[    <Import Project="$(QtMsBuild)\Qt.props" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[    <Import Project="$(QtMsBuild)\Qt.props" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[    <Import Project="$(QtMsBuild)\Qt.props" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Qt targets]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[C:\Users\97250\Desktop\AbeltonXsens\Alien C++\alien_main.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  <Import Project="$(QtMsBuild)\qt.targets" Condition="Exists('$(QtMsBuild)\qt.targets')" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+  </Section>
+  <Section>
+    <Paragraph />
+  </Section>
+</FlowDocument>
+<!--T13GTdoH4RI6amRwhMAUd5AgCVr0WGZLBWvFRuDfH5Y=-->
