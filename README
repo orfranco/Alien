@@ -1,0 +1,11 @@
+Setup:
+1. Clone repo.
+2. Install vcpkg and dependencies:
+    a. git clone https://github.com/microsoft/vcpkg.git
+    b. cd vcpkg
+    c. .\bootstrap-vcpkg.bat
+    d. .\vcpkg integrate install
+    e. .\vcpkg install rtmidi
+3. Install loopMidi from here: https://www.tobias-erichsen.de/software/loopmidi.html
+4. Open loopMidi and create a new Midi channel called "Alien".
+5. Enable MIDI channel in ableton.
