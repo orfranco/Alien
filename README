@@ -9,3 +9,11 @@ Setup:
 3. Install loopMidi from here: https://www.tobias-erichsen.de/software/loopmidi.html
 4. Open loopMidi and create a new Midi channel called "Alien".
 5. Enable MIDI channel in ableton.
+6. Install QT: 
+    a. get it from here: https://www.qt.io/
+    b. During installation, ensure you select the MSVC (Microsoft Visual Studio) components for your version of Visual Studio.
+    c. After installation, Open Visual Studio and go to Extensions -> Manage Extensions.
+    d. In the search bar, type "Qt Visual Studio Tools".
+    e. Install the plugin, and restart Visual Studio after the installation completes.
+    f. Go to Qt VS Tools -> Qt Options
+    g. Add your qt version.
