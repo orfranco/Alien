@@ -1,33 +1,28 @@
-#ifndef XSDOTHANDLER_H
-#define XSDOTHANDLER_H
+#ifndef XS_DOT_HANDLER_H
+#define XS_DOT_HANDLER_H
 
 #include <QObject>
-#include <QDebug>
-#include <vector>
-#include <callback_handler.h>
 #include <xsensdot_pc_sdk.h>
 #include <xstypes/xstime.h>
-#include <thread>
+#include <callback_handler.h>
+#include <vector>
 
-class MainWindow;  // Forward declaration of MainWindow
+class MainWindow;
 
-class XsDotHandler : public QObject
+class XsDotHandler
 {
-    Q_OBJECT
-
 public:
-    explicit XsDotHandler(MainWindow* parent);
+    XsDotHandler(MainWindow* mainWindow);
     ~XsDotHandler();
 
     void run();
+    void processPackets();
 
 private:
     XsDotConnectionManager* m_manager;
     CallbackHandler* m_callbackHandler;
     std::vector<XsDotDevice*> m_deviceList;
-
-    void initializeDevices();
-    void processPackets();
+    MainWindow* m_mainWindow; // Reference to MainWindow
 };
 
-#endif  // XSDOTHANDLER_H
+#endif // XS_DOT_HANDLER_H
