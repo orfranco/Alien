@@ -7,7 +7,6 @@
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent), m_manager(nullptr)
 {
-    // Set up the GUI
     QWidget* centralWidget = new QWidget(this);
     setCentralWidget(centralWidget);
 
@@ -21,7 +20,6 @@ MainWindow::MainWindow(QWidget* parent)
     m_label = new QLabel("MIDI Value: 64", this);
     layout->addWidget(m_label);
 
-    // Set up MIDI
     try {
         if (midiOut.getPortCount() == 0) {
             qDebug() << "No available MIDI output ports.";
@@ -33,7 +31,6 @@ MainWindow::MainWindow(QWidget* parent)
         qDebug() << "MIDI Error: " << error.what();
     }
 
-    // Initialize Xsens SDK
     m_manager = XsDotConnectionManager::construct();
     if (m_manager == nullptr) {
         qDebug() << "Failed to create XsDotConnectionManager.";
@@ -43,16 +40,15 @@ MainWindow::MainWindow(QWidget* parent)
     m_callbackHandler = new CallbackHandler();
     m_manager->addXsDotCallbackHandler(m_callbackHandler);
 
-    // Start the Xsens connection in a separate thread
+    // Start the Xsens connection in a separate thread because it doesn't work well with QT Threading:
     std::thread xsensThread([this]() {
-        runXsensConnection();  // Run the connection logic in a separate thread
+        runXsensConnection();
         });
-    xsensThread.detach();  // Detach the thread so it runs independently
+    xsensThread.detach();
 }
 
 MainWindow::~MainWindow()
 {
-    // Cleanup
     if (m_manager) {
         m_manager->destruct();
     }
@@ -62,12 +58,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::runXsensConnection()
 {
-    // Scan for Xsens DOT devices
     m_manager->enableDeviceDetection();
     qDebug() << "Scanning for Xsens DOT devices...";
 
-    // Wait for a while for devices to be detected
-    XsTime::msleep(5000);  // Simulate waiting for device detection (blocking)
+    XsTime::msleep(10000);
 
     m_manager->disableDeviceDetection();
 
@@ -78,7 +72,6 @@ void MainWindow::runXsensConnection()
 
     qDebug() << "Found " << m_callbackHandler->getDetectedDots().size() << " Dots";
 
-    // Open the detected devices
     for (auto& portInfo : m_callbackHandler->getDetectedDots()) {
         qDebug() << "Connecting to device: " << portInfo.bluetoothAddress().toStdString().c_str();
 
@@ -126,7 +119,6 @@ void MainWindow::runXsensConnection()
         {
             for (auto const& device : m_deviceList)
             {
-                // Retrieve a packet
                 XsDataPacket packet = m_callbackHandler->getNextPacket(device->portInfo().bluetoothAddress());
 
                 if (packet.containsOrientation())

@@ -23,7 +23,7 @@
 #include <rtmidi/RtMidi.h>
 
 
-class CallbackHandler;  // Forward declaration for the callback handler
+class CallbackHandler;
 
 class MainWindow : public QMainWindow
 {
@@ -34,21 +34,21 @@ public:
     ~MainWindow();
 
 private slots:
-    void updateGui(int midiValue);  // Slot to update GUI based on the callback
+    void updateGui(int midiValue);
     void runXsensConnection();
 
 private:
     QDial* m_dial;
     QLabel* m_label;
 
-    RtMidiOut midiOut;  // MIDI output object
+    RtMidiOut midiOut;
 
     XsDotConnectionManager* m_manager;
     XsDotDevicePtrArray m_deviceList;
 
-    CallbackHandler* m_callbackHandler;  // Callback handler instance
+    CallbackHandler* m_callbackHandler;
 
-    void sendMidiMessage(int value);  // Method to send MIDI messages
+    void sendMidiMessage(int value);
 };
 
 #endif // MAINWINDOW_H
