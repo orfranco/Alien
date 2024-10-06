@@ -78,9 +78,9 @@ void XsDotHandler::processPackets()
                 if (packet.containsOrientation()) {
                     XsEuler euler = packet.orientationEuler();
 
-                    int rollValue = ((euler.roll() + 180) / 360.0) * 127.0;
-                    int pitchValue = ((euler.pitch() + 180) / 360.0) * 127.0;
-                    int yawValue = ((euler.yaw() + 180) / 360.0) * 127.0;
+                    int rollValue = ((euler.roll() + 180.0) / 360.0) * 128.0;
+                    int pitchValue = ((euler.pitch() + 180.0) / 360.0) * 128.0;
+                    int yawValue = ((euler.yaw() + 180.0) / 360.0) * 128.0;
 
                     m_mainWindow->updateGui(rollValue, pitchValue, yawValue);
                 }

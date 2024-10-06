@@ -2,6 +2,7 @@
 #include "xs_dot_handler.h"
 #include <QVBoxLayout>
 #include <QHBoxLayout>
+#include <thread>
 
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent), m_xsDotHandler(nullptr)
@@ -9,68 +10,65 @@ MainWindow::MainWindow(QWidget* parent)
     QWidget* centralWidget = new QWidget(this);
     setCentralWidget(centralWidget);
 
-    QVBoxLayout* mainLayout = new QVBoxLayout(centralWidget);
+    QHBoxLayout* mainLayout = new QHBoxLayout(centralWidget);
 
-    QHBoxLayout* rollLayout = new QHBoxLayout();
+    QVBoxLayout* rollColumn = new QVBoxLayout();
+
     m_rollDial = new QDial(this);
     m_rollDial->setRange(0, 127);
     m_rollDial->setValue(64);
+    m_rollDial->setFixedSize(150, 150);
     m_rollLabel = new QLabel("Roll MIDI Value: 64", this);
+
     m_sendRollToggle = new QCheckBox("Send Roll", this);
     m_sendOnlyRollButton = new QPushButton("Send Only Roll", this);
-    rollLayout->addWidget(m_rollDial);
-    rollLayout->addWidget(m_rollLabel);
-    rollLayout->addWidget(m_sendRollToggle);
-    rollLayout->addWidget(m_sendOnlyRollButton);
-    mainLayout->addLayout(rollLayout);
 
-    m_sendRollToggle->setStyleSheet(
-        "QCheckBox::indicator { width: 50px; height: 25px; }"
-        "QCheckBox::indicator:checked { background-color: red; border-radius: 12px; }"
-        "QCheckBox::indicator:unchecked { background-color: green; border-radius: 12px; }"
-    );
-    connect(m_sendRollToggle, &QCheckBox::stateChanged, this, &MainWindow::toggleSendRoll);
-    connect(m_sendOnlyRollButton, &QPushButton::clicked, this, &MainWindow::sendOnlyRoll);
+    rollColumn->addWidget(m_rollDial);
+    rollColumn->addWidget(m_rollLabel);
+    rollColumn->addWidget(m_sendRollToggle);
+    rollColumn->addWidget(m_sendOnlyRollButton);
+    mainLayout->addLayout(rollColumn);
 
-    QHBoxLayout* pitchLayout = new QHBoxLayout();
+    QVBoxLayout* pitchColumn = new QVBoxLayout();
+
     m_pitchDial = new QDial(this);
     m_pitchDial->setRange(0, 127);
     m_pitchDial->setValue(64);
+    m_pitchDial->setFixedSize(150, 150);
     m_pitchLabel = new QLabel("Pitch MIDI Value: 64", this);
+
     m_sendPitchToggle = new QCheckBox("Send Pitch", this);
     m_sendOnlyPitchButton = new QPushButton("Send Only Pitch", this);
-    pitchLayout->addWidget(m_pitchDial);
-    pitchLayout->addWidget(m_pitchLabel);
-    pitchLayout->addWidget(m_sendPitchToggle);
-    pitchLayout->addWidget(m_sendOnlyPitchButton);
-    mainLayout->addLayout(pitchLayout);
 
-    m_sendPitchToggle->setStyleSheet(
-        "QCheckBox::indicator { width: 50px; height: 25px; }"
-        "QCheckBox::indicator:checked { background-color: red; border-radius: 12px; }"
-        "QCheckBox::indicator:unchecked { background-color: green; border-radius: 12px; }"
-    );
-    connect(m_sendPitchToggle, &QCheckBox::stateChanged, this, &MainWindow::toggleSendPitch);
-    connect(m_sendOnlyPitchButton, &QPushButton::clicked, this, &MainWindow::sendOnlyPitch);
+    pitchColumn->addWidget(m_pitchDial);
+    pitchColumn->addWidget(m_pitchLabel);
+    pitchColumn->addWidget(m_sendPitchToggle);
+    pitchColumn->addWidget(m_sendOnlyPitchButton);
+    mainLayout->addLayout(pitchColumn);
 
-    QHBoxLayout* yawLayout = new QHBoxLayout();
+    QVBoxLayout* yawColumn = new QVBoxLayout();
+
     m_yawDial = new QDial(this);
     m_yawDial->setRange(0, 127);
     m_yawDial->setValue(64);
+    m_yawDial->setFixedSize(150, 150);
     m_yawLabel = new QLabel("Yaw MIDI Value: 64", this);
+
     m_sendYawToggle = new QCheckBox("Send Yaw", this);
     m_sendOnlyYawButton = new QPushButton("Send Only Yaw", this);
-    yawLayout->addWidget(m_yawDial);
-    yawLayout->addWidget(m_yawLabel);
-    yawLayout->addWidget(m_sendYawToggle);
-    yawLayout->addWidget(m_sendOnlyYawButton);
-    mainLayout->addLayout(yawLayout);
 
-    m_sendYawToggle->setStyleSheet(
-        "QCheckBox::indicator { width: 50px; height: 25px; }"
-        "QCheckBox::indicator:checked { background-color: red; border-radius: 12px; }"
-        "QCheckBox::indicator:unchecked { background-color: green; border-radius: 12px; }"
-    );
+    yawColumn->addWidget(m_yawDial);
+    yawColumn->addWidget(m_yawLabel);
+    yawColumn->addWidget(m_sendYawToggle);
+    yawColumn->addWidget(m_sendOnlyYawButton);
+    mainLayout->addLayout(yawColumn);
+
+    setToggleStyles();
+
+    connect(m_sendRollToggle, &QCheckBox::stateChanged, this, &MainWindow::toggleSendRoll);
+    connect(m_sendOnlyRollButton, &QPushButton::clicked, this, &MainWindow::sendOnlyRoll);
+    connect(m_sendPitchToggle, &QCheckBox::stateChanged, this, &MainWindow::toggleSendPitch);
+    connect(m_sendOnlyPitchButton, &QPushButton::clicked, this, &MainWindow::sendOnlyPitch);
     connect(m_sendYawToggle, &QCheckBox::stateChanged, this, &MainWindow::toggleSendYaw);
     connect(m_sendOnlyYawButton, &QPushButton::clicked, this, &MainWindow::sendOnlyYaw);
 
@@ -104,6 +102,7 @@ void MainWindow::setupMidi()
 
 void MainWindow::updateGui(int rollValue, int pitchValue, int yawValue)
 {
+    // Update GUI values
     m_rollDial->setValue(rollValue);
     m_rollLabel->setText(QString("Roll MIDI Value: %1").arg(rollValue));
 
@@ -113,6 +112,7 @@ void MainWindow::updateGui(int rollValue, int pitchValue, int yawValue)
     m_yawDial->setValue(yawValue);
     m_yawLabel->setText(QString("Yaw MIDI Value: %1").arg(yawValue));
 
+    // Send MIDI messages based on toggle states
     if (!m_sendRollToggle->isChecked()) sendMidiMessage(rollValue, 9);     // Roll on CC 9
     if (!m_sendPitchToggle->isChecked()) sendMidiMessage(pitchValue, 10);  // Pitch on CC 10
     if (!m_sendYawToggle->isChecked()) sendMidiMessage(yawValue, 11);      // Yaw on CC 11
@@ -171,4 +171,25 @@ void MainWindow::sendOnlyYaw()
     m_sendRollToggle->setChecked(true);
     m_sendPitchToggle->setChecked(true);
     m_sendYawToggle->setChecked(false);
+}
+
+void MainWindow::setToggleStyles()
+{
+    m_sendRollToggle->setStyleSheet(
+        "QCheckBox::indicator { width: 50px; height: 25px; }"
+        "QCheckBox::indicator:checked { background-color: red; border-radius: 12px; }"
+        "QCheckBox::indicator:unchecked { background-color: green; border-radius: 12px; }"
+    );
+
+    m_sendPitchToggle->setStyleSheet(
+        "QCheckBox::indicator { width: 50px; height: 25px; }"
+        "QCheckBox::indicator:checked { background-color: red; border-radius: 12px; }"
+        "QCheckBox::indicator:unchecked { background-color: green; border-radius: 12px; }"
+    );
+
+    m_sendYawToggle->setStyleSheet(
+        "QCheckBox::indicator { width: 50px; height: 25px; }"
+        "QCheckBox::indicator:checked { background-color: red; border-radius: 12px; }"
+        "QCheckBox::indicator:unchecked { background-color: green; border-radius: 12px; }"
+    );
 }
