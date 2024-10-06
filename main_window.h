@@ -3,52 +3,32 @@
 
 #include <QMainWindow>
 #include <QDial>
-#include <QVBoxLayout>
 #include <QLabel>
-#include <QTimer>
-#include <xsensdot_pc_sdk.h>
-#include <xstypes/xstime.h>
-#include <xstypes/xsportinfoarray.h>
-#include <xscommon/xsens_mutex.h>
-
-#include <map>
-#include <list>
-#include <string>
-
-#include "conio.h"
-#include "user_settings.h"
-#include <iostream>
-#include <vector>
-#include <string>
 #include <rtmidi/RtMidi.h>
+#include <callback_handler.h>
+#include <thread>
 
-
-class CallbackHandler;
+class XsDotHandler;  // Forward declaration of XsDotHandler
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    MainWindow(QWidget* parent = nullptr);
+    explicit MainWindow(QWidget* parent = nullptr);
     ~MainWindow();
 
-private slots:
+public slots:
     void updateGui(int midiValue);
-    void runXsensConnection();
 
 private:
     QDial* m_dial;
     QLabel* m_label;
-
     RtMidiOut midiOut;
+    XsDotHandler* m_xsDotHandler;
 
-    XsDotConnectionManager* m_manager;
-    XsDotDevicePtrArray m_deviceList;
-
-    CallbackHandler* m_callbackHandler;
-
+    void setupMidi();
     void sendMidiMessage(int value);
 };
 
-#endif // MAINWINDOW_H
+#endif  // MAINWINDOW_H
