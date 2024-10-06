@@ -17,7 +17,8 @@ MainWindow::MainWindow(QWidget* parent)
     m_rollDial = new QDial(this);
     m_rollDial->setRange(0, 127);
     m_rollDial->setValue(64);
-    m_rollDial->setFixedSize(150, 150);
+    m_rollDial->setFixedSize(120, 120);
+    m_rollDial->setNotchesVisible(true);
     m_rollLabel = new QLabel("Roll MIDI Value: 64", this);
 
     m_sendRollToggle = new QCheckBox("Send Roll", this);
@@ -34,7 +35,8 @@ MainWindow::MainWindow(QWidget* parent)
     m_pitchDial = new QDial(this);
     m_pitchDial->setRange(0, 127);
     m_pitchDial->setValue(64);
-    m_pitchDial->setFixedSize(150, 150);
+    m_pitchDial->setFixedSize(120, 120);
+    m_pitchDial->setNotchesVisible(true);
     m_pitchLabel = new QLabel("Pitch MIDI Value: 64", this);
 
     m_sendPitchToggle = new QCheckBox("Send Pitch", this);
@@ -51,7 +53,8 @@ MainWindow::MainWindow(QWidget* parent)
     m_yawDial = new QDial(this);
     m_yawDial->setRange(0, 127);
     m_yawDial->setValue(64);
-    m_yawDial->setFixedSize(150, 150);
+    m_yawDial->setFixedSize(120, 120);
+    m_yawDial->setNotchesVisible(true);
     m_yawLabel = new QLabel("Yaw MIDI Value: 64", this);
 
     m_sendYawToggle = new QCheckBox("Send Yaw", this);
@@ -102,7 +105,6 @@ void MainWindow::setupMidi()
 
 void MainWindow::updateGui(int rollValue, int pitchValue, int yawValue)
 {
-    // Update GUI values
     m_rollDial->setValue(rollValue);
     m_rollLabel->setText(QString("Roll MIDI Value: %1").arg(rollValue));
 
@@ -112,7 +114,6 @@ void MainWindow::updateGui(int rollValue, int pitchValue, int yawValue)
     m_yawDial->setValue(yawValue);
     m_yawLabel->setText(QString("Yaw MIDI Value: %1").arg(yawValue));
 
-    // Send MIDI messages based on toggle states
     if (!m_sendRollToggle->isChecked()) sendMidiMessage(rollValue, 9);     // Roll on CC 9
     if (!m_sendPitchToggle->isChecked()) sendMidiMessage(pitchValue, 10);  // Pitch on CC 10
     if (!m_sendYawToggle->isChecked()) sendMidiMessage(yawValue, 11);      // Yaw on CC 11
