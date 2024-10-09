@@ -91,16 +91,27 @@ MainWindow::~MainWindow()
 
 void MainWindow::setupMidi()
 {
-    try {
-        if (midiOut.getPortCount() == 0) {
-            qDebug() << "No available MIDI output ports.";
-            return;
+    unsigned int nPorts = midiOut.getPortCount();
+    std::string targetPortName = "Alien";
+    int targetPortIndex = -1;
+
+    for (unsigned int i = 0; i < nPorts; i++) {
+        if (midiOut.getPortName(i).find(targetPortName) != std::string::npos) {
+            targetPortIndex = i;
+            break;
         }
-        midiOut.openPort(2);
     }
-    catch (RtMidiError& error) {
-        qDebug() << "MIDI Error: " << error.what();
+
+    if (targetPortIndex == -1) {
+        qDebug() << "MIDI output port 'Alien' not found.";
+        throw std::runtime_error("MIDI output port 'Alien' not found.");
     }
+
+    midiOut.openPort(targetPortIndex);
+    qDebug() << "Opened port 'Alien' at index" << targetPortIndex << ".";
+
+    // TODO: if linux/mac os, run this line:
+    // midiOut.openVirtualPort("Virtual MIDI Port");
 }
 
 void MainWindow::updateGui(int rollValue, int pitchValue, int yawValue)
