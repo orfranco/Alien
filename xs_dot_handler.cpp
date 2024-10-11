@@ -70,6 +70,8 @@ void XsDotHandler::run()
 
 void XsDotHandler::processPackets()
 {
+    bool orientationResetDone = false;
+    int64_t lastOrientationReset = XsTime::timeStampNow();
     while (true) {
         if (m_callbackHandler->packetsAvailable()) {
             for (auto const& device : m_deviceList) {
@@ -85,6 +87,19 @@ void XsDotHandler::processPackets()
                     m_mainWindow->updateGui(rollValue, pitchValue, yawValue);
                 }
             }
+        }
+
+        if ((XsTime::timeStampNow() - lastOrientationReset) > 5000)
+        {
+            for (auto const& device : m_deviceList)
+            {
+                qDebug() << "Resetting heading for device " << device->portInfo().bluetoothAddress().toStdString().c_str() << ":";
+                if (device->resetOrientation(XRM_Heading))
+                    qDebug() << "OK";
+                else
+                    qDebug() << "NOK: " << device->lastResultText().toStdString().c_str();
+            }
+            lastOrientationReset = XsTime::timeStampNow();
         }
     }
 }
