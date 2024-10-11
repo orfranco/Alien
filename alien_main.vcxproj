@@ -234,7 +234,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="callback_handler.h" />
-    <ClInclude Include="xs_dot_handler.h" />
+    <QtMoc Include="xs_dot_handler.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <Import Project="$(QtMsBuild)\qt.targets" Condition="Exists('$(QtMsBuild)\qt.targets')" />

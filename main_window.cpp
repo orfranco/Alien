@@ -2,7 +2,8 @@
 #include "xs_dot_handler.h"
 #include <QVBoxLayout>
 #include <QHBoxLayout>
-#include <thread>
+#include <QThread>
+#include <QObject> 
 
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent), m_xsDotHandler(nullptr)
@@ -78,10 +79,12 @@ MainWindow::MainWindow(QWidget* parent)
     setupMidi();
 
     m_xsDotHandler = new XsDotHandler(this);
-    std::thread xsensThread([this]() {
-        m_xsDotHandler->run();
-        });
-    xsensThread.detach();
+    QThread* xsensThread = new QThread();
+    m_xsDotHandler->moveToThread(xsensThread);
+    connect(xsensThread, &QThread::started, m_xsDotHandler, &XsDotHandler::run);
+    connect(xsensThread, &QThread::finished, xsensThread, &QObject::deleteLater);
+
+    xsensThread->start();
 }
 
 MainWindow::~MainWindow()

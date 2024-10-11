@@ -9,8 +9,10 @@
 
 class MainWindow;
 
-class XsDotHandler
+class XsDotHandler : public QObject
 {
+    Q_OBJECT
+
 public:
     XsDotHandler(MainWindow* mainWindow);
     ~XsDotHandler();

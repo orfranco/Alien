@@ -65,7 +65,7 @@ void XsDotHandler::run()
         }
     }
 
-    processPackets();  // Start processing the incoming data
+    processPackets();
 }
 
 void XsDotHandler::processPackets()
