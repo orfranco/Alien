@@ -77,9 +77,9 @@ void CallbackHandler::onLiveDataAvailable(XsDotDevice* device, const XsDataPacke
     xsens::Lock locky(&m_mutex);
     assert(packet != nullptr);
     while (m_numberOfPacketsInBuffer[device->portInfo().bluetoothAddress()] >= m_maxNumberOfPacketsInBuffer)
+        qDebug() << "Reached Maximum number of packets in Queue";
         (void)getNextPacket(device->portInfo().bluetoothAddress());
 
     m_packetBuffer[device->portInfo().bluetoothAddress()].push_back(*packet);
     ++m_numberOfPacketsInBuffer[device->portInfo().bluetoothAddress()];
-    assert(m_numberOfPacketsInBuffer[device->portInfo().bluetoothAddress()] <= m_maxNumberOfPacketsInBuffer);
 }

@@ -59,7 +59,9 @@ void XsDotHandler::run()
 
         m_deviceList.push_back(device);
 
-        if (!device->startMeasurement(XsPayloadMode::ExtendedEuler)) {
+        device->setOutputRate(60);
+        qDebug() << "OutputRate: " << device->outputRate();
+        if (!device->startMeasurement(XsPayloadMode::OrientationEuler)) {
             qDebug() << "Could not put device into measurement mode. Reason: " << m_manager->lastResultText().toStdString().c_str();
             continue;
         }
@@ -89,7 +91,7 @@ void XsDotHandler::processPackets()
             }
         }
 
-        if ((XsTime::timeStampNow() - lastOrientationReset) > 5000)
+        if ((XsTime::timeStampNow() - lastOrientationReset) > 50000)
         {
             for (auto const& device : m_deviceList)
             {
