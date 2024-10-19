@@ -94,7 +94,7 @@ void XsDotHandler::processPackets()
             for (auto const& device : m_deviceList)
             {
                 qDebug() << "Resetting heading for device " << device->portInfo().bluetoothAddress().toStdString().c_str() << ":";
-                if (device->resetOrientation(XRM_Heading))
+                if (device->resetOrientation(XRM_Heading) || device->resetOrientation(XRM_Object))
                     qDebug() << "OK";
                 else
                     qDebug() << "NOK: " << device->lastResultText().toStdString().c_str();

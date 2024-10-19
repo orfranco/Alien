@@ -222,8 +222,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="callback_handler.cpp" />
+    <ClCompile Include="control_dial.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="main_window.cpp" />
+    <ClCompile Include="sensor_control.cpp" />
     <ClCompile Include="xs_dot_handler.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -234,6 +236,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="callback_handler.h" />
+    <QtMoc Include="sensor_control.h" />
+    <QtMoc Include="control_dial.h" />
     <QtMoc Include="xs_dot_handler.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
