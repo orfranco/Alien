@@ -6,9 +6,9 @@ SensorControl::SensorControl(QWidget* parent)
 {
     QHBoxLayout* layout = new QHBoxLayout(this);
 
-    m_rollDial = new ControlDial("Roll", 9, this);
-    m_pitchDial = new ControlDial("Pitch", 10, this);
-    m_yawDial = new ControlDial("Yaw", 11, this);
+    m_rollDial = new ControlDial("Roll", this);
+    m_pitchDial = new ControlDial("Pitch", this);
+    m_yawDial = new ControlDial("Yaw", this);
 
     layout->addWidget(m_rollDial);
     layout->addWidget(m_pitchDial);

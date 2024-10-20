@@ -23,9 +23,7 @@ MainWindow::MainWindow(QWidget* parent)
     QFutureWatcher<std::list<std::string>>* watcher = new QFutureWatcher<std::list<std::string>>(this);
     connect(watcher, &QFutureWatcher<std::list<std::string>>::finished, [this, watcher, mainLayout]() {
         std::list<std::string> connectedDots = watcher->result();
-
         setupSensorsControls(connectedDots, *mainLayout);
-
         watcher->deleteLater();
 
         QThread* xsensThread = new QThread();

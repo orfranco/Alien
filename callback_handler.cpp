@@ -24,14 +24,6 @@ bool CallbackHandler::errorReceived() const
     return m_errorReceived;
 }
 
-bool CallbackHandler::packetsAvailable() const
-{
-    for (auto const& device : m_detectedDots)
-        if (!packetAvailable(device.bluetoothAddress()))
-            return false;
-    return true;
-}
-
 bool CallbackHandler::packetAvailable(const XsString& bluetoothAddress) const
 {
     xsens::Lock locky(&m_mutex);

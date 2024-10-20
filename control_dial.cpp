@@ -1,8 +1,10 @@
 #include "control_dial.h"
 #include <QVBoxLayout>
 
-ControlDial::ControlDial(const QString& label, int midiCC, QWidget* parent)
-    : QWidget(parent), m_midiCC(midiCC), m_sendEnabled(true)
+int ControlDial::nextControlChangeNumber = 9;
+
+ControlDial::ControlDial(const QString& label, QWidget* parent)
+    : QWidget(parent), m_midiCC(nextControlChangeNumber++), m_sendEnabled(true)
 {
     QVBoxLayout* layout = new QVBoxLayout(this);
 

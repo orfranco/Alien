@@ -19,7 +19,6 @@ public:
 
     XsPortInfoArray getDetectedDots() const;
     bool errorReceived() const;
-    bool packetsAvailable() const;
     bool packetAvailable(const XsString& bluetoothAddress) const;
     XsDataPacket getNextPacket(const XsString& bluetoothAddress);
 

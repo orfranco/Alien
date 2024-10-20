@@ -24,7 +24,7 @@ private:
     XsDotConnectionManager* m_manager;
     CallbackHandler* m_callbackHandler;
     std::vector<XsDotDevice*> m_deviceList;
-    MainWindow* m_mainWindow; // Reference to MainWindow
+    MainWindow* m_mainWindow;
 };
 
 #endif // XS_DOT_HANDLER_H

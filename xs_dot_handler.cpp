@@ -3,15 +3,13 @@
 #include <QDebug>
 
 XsDotHandler::XsDotHandler(MainWindow* mainWindow)
-    : m_mainWindow(mainWindow)
+    : m_mainWindow(mainWindow), m_manager(XsDotConnectionManager::construct()), m_callbackHandler(new CallbackHandler())
 {
-    m_manager = XsDotConnectionManager::construct();
     if (!m_manager) {
         qDebug() << "Failed to create XsDotConnectionManager.";
         return;
     }
 
-    m_callbackHandler = new CallbackHandler();
     m_manager->addXsDotCallbackHandler(m_callbackHandler);
 }
 

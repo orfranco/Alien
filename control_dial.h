@@ -12,7 +12,7 @@ class ControlDial : public QWidget
     Q_OBJECT
 
 public:
-    explicit ControlDial(const QString& label, int midiCC, QWidget* parent = nullptr);
+    explicit ControlDial(const QString& label, QWidget* parent = nullptr);
 
     void setDialValue(int value);
     bool isSendEnabled() const;
@@ -31,6 +31,8 @@ private:
     QLabel* m_label;
     QCheckBox* m_sendToggle;
     QPushButton* m_sendOnlyButton;
+
+    static int nextControlChangeNumber;
 
     int m_midiCC;
     bool m_sendEnabled;
