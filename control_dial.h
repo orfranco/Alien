@@ -17,7 +17,7 @@ public:
     void setDialValue(int value);
     bool isSendEnabled() const;
     void toggleSendStateWithParam(bool isOn);
-    QPushButton* getSendOnlyButton() const { return m_sendOnlyButton; } // Provide access to Send Only button
+    QPushButton* getSendOnlyButton() const { return m_sendOnlyButton; }
 
 
 signals:

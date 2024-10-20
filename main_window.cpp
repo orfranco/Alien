@@ -72,6 +72,7 @@ void MainWindow::setupSensorsControls(std::list<std::string> connectedDots, QVBo
         mainLayout.addWidget(sensorControl);
 
         connect(sensorControl, &SensorControl::sendMidiMessage, this, &MainWindow::sendMidiMessage);
+        connect(sensorControl, &SensorControl::turnOffAllSensorsControls, this, &MainWindow::turnOffAllSensorsControls);
 
         m_sensorsControls[bluetoothAddress] = std::move(sensorControl);
     }
@@ -80,6 +81,12 @@ void MainWindow::setupSensorsControls(std::list<std::string> connectedDots, QVBo
 void MainWindow::updateGui(std::string bluetoothAddress, int rollValue, int pitchValue, int yawValue)
 {
     m_sensorsControls[bluetoothAddress]->updateValues(rollValue, pitchValue, yawValue);
+}
+
+void MainWindow::turnOffAllSensorsControls() {
+    for (auto& pair : m_sensorsControls) {
+        pair.second->turnOff();
+    }
 }
 
 void MainWindow::sendMidiMessage(int value, int ccChannel)

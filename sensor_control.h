@@ -10,9 +10,11 @@ class SensorControl : public QWidget
 
 public:
     explicit SensorControl(QWidget* parent = nullptr);
+    void turnOff();
 
 signals:
     void sendMidiMessage(int value, int ccChannel);
+    void turnOffAllSensorsControls();
 
 public slots:
     void updateValues(int rollValue, int pitchValue, int yawValue);

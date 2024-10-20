@@ -26,6 +26,7 @@ public slots:
 private:
     void setupMidi();
     void setupSensorsControls(std::list<std::string> connectedDots, QVBoxLayout& mainLayout);
+    void turnOffAllSensorsControls();
 
     SensorControl* m_sensorControl;
     std::unordered_map<std::string, SensorControl*> m_sensorsControls;

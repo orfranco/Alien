@@ -32,21 +32,25 @@ void SensorControl::updateValues(int rollValue, int pitchValue, int yawValue)
 
 void SensorControl::sendOnlyRoll()
 {
+    turnOffAllSensorsControls();
     m_rollDial->toggleSendStateWithParam(true);
-    m_pitchDial->toggleSendStateWithParam(false);
-    m_yawDial->toggleSendStateWithParam(false);
 }
 
 void SensorControl::sendOnlyPitch()
 {
-    m_rollDial->toggleSendStateWithParam(false);
+    turnOffAllSensorsControls();
     m_pitchDial->toggleSendStateWithParam(true);
-    m_yawDial->toggleSendStateWithParam(false);
 }
 
 void SensorControl::sendOnlyYaw()
 {
+    turnOffAllSensorsControls();
+    m_yawDial->toggleSendStateWithParam(true);
+}
+
+void SensorControl::turnOff()
+{
     m_rollDial->toggleSendStateWithParam(false);
     m_pitchDial->toggleSendStateWithParam(false);
-    m_yawDial->toggleSendStateWithParam(true);
+    m_yawDial->toggleSendStateWithParam(false);
 }
