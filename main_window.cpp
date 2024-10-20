@@ -1,10 +1,9 @@
 #include "main_window.h"
 #include "xs_dot_handler.h"
 #include "sensor_control.h"
-#include <QVBoxLayout>
-#include <QHBoxLayout>
-#include <QThread>
-#include <QObject>
+#include <QtConcurrent/QtConcurrent>
+#include <QFuture>
+#include <QFutureWatcher>
 
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent), m_xsDotHandler(nullptr)
@@ -14,21 +13,30 @@ MainWindow::MainWindow(QWidget* parent)
 
     QVBoxLayout* mainLayout = new QVBoxLayout(centralWidget);
 
-    // Create SensorControl for Roll, Pitch, and Yaw
-    m_sensorControl = new SensorControl(this);
-    mainLayout->addWidget(m_sensorControl);
-
-    connect(m_sensorControl, &SensorControl::sendMidiMessage, this, &MainWindow::sendMidiMessage);
-
     setupMidi();
 
     m_xsDotHandler = new XsDotHandler(this);
-    QThread* xsensThread = new QThread();
-    m_xsDotHandler->moveToThread(xsensThread);
-    connect(xsensThread, &QThread::started, m_xsDotHandler, &XsDotHandler::run);
-    connect(xsensThread, &QThread::finished, xsensThread, &QObject::deleteLater);
+    QFuture<std::list<std::string>> future = QtConcurrent::run([this]() {
+        return m_xsDotHandler->connectDots();
+        });
 
-    xsensThread->start();
+    QFutureWatcher<std::list<std::string>>* watcher = new QFutureWatcher<std::list<std::string>>(this);
+    connect(watcher, &QFutureWatcher<std::list<std::string>>::finished, [this, watcher, mainLayout]() {
+        std::list<std::string> connectedDots = watcher->result();
+
+        setupSensorsControls(connectedDots, *mainLayout);
+
+        watcher->deleteLater();
+
+        QThread* xsensThread = new QThread();
+        m_xsDotHandler->moveToThread(xsensThread);
+        connect(xsensThread, &QThread::started, m_xsDotHandler, &XsDotHandler::processPackets);
+        connect(xsensThread, &QThread::finished, xsensThread, &QObject::deleteLater);
+
+        xsensThread->start();
+        });
+
+    watcher->setFuture(future);
 }
 
 MainWindow::~MainWindow()
@@ -58,9 +66,22 @@ void MainWindow::setupMidi()
     qDebug() << "Opened port 'Alien' at index" << targetPortIndex << ".";
 }
 
-void MainWindow::updateGui(int rollValue, int pitchValue, int yawValue)
+void MainWindow::setupSensorsControls(std::list<std::string> connectedDots, QVBoxLayout& mainLayout)
 {
-    m_sensorControl->updateValues(rollValue, pitchValue, yawValue);
+    for (const auto& bluetoothAddress : connectedDots) {
+        auto sensorControl = new SensorControl(this);
+
+        mainLayout.addWidget(sensorControl);
+
+        connect(sensorControl, &SensorControl::sendMidiMessage, this, &MainWindow::sendMidiMessage);
+
+        m_sensorsControls[bluetoothAddress] = std::move(sensorControl);
+    }
+}
+
+void MainWindow::updateGui(std::string bluetoothAddress, int rollValue, int pitchValue, int yawValue)
+{
+    m_sensorsControls[bluetoothAddress]->updateValues(rollValue, pitchValue, yawValue);
 }
 
 void MainWindow::sendMidiMessage(int value, int ccChannel)

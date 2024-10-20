@@ -30,11 +30,11 @@ ControlDial::ControlDial(const QString& label, int midiCC, QWidget* parent)
 
 void ControlDial::setDialValue(int value)
 {
-    m_dial->setValue(value);
-    m_label->setText(QString("MIDI Value: %1").arg(value));
-
     if (m_sendEnabled)
         emit sendMidiMessage(value, m_midiCC);
+
+    m_dial->setValue(value);
+    m_label->setText(QString("MIDI Value: %1").arg(value));
 }
 
 bool ControlDial::isSendEnabled() const

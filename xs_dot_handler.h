@@ -17,7 +17,7 @@ public:
     XsDotHandler(MainWindow* mainWindow);
     ~XsDotHandler();
 
-    void run();
+    std::list<std::string> connectDots();
     void processPackets();
 
 private:

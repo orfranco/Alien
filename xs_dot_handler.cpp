@@ -24,8 +24,10 @@ XsDotHandler::~XsDotHandler()
     delete m_callbackHandler;
 }
 
-void XsDotHandler::run()
+std::list<std::string> XsDotHandler::connectDots()
 {
+    std::list<std::string> bluetoothAddresses;
+
     m_manager->enableDeviceDetection();
     qDebug() << "Scanning for Xsens DOT devices...";
 
@@ -35,7 +37,7 @@ void XsDotHandler::run()
 
     if (m_callbackHandler->getDetectedDots().empty()) {
         qDebug() << "No devices found.";
-        return;
+        return bluetoothAddresses;
     }
 
     qDebug() << "Found " << m_callbackHandler->getDetectedDots().size() << " Dots";
@@ -58,25 +60,31 @@ void XsDotHandler::run()
         }
 
         m_deviceList.push_back(device);
+        bluetoothAddresses.push_back(portInfo.bluetoothAddress().toStdString());
 
         device->setOutputRate(60);
         qDebug() << "OutputRate: " << device->outputRate();
+
+    }
+
+    return bluetoothAddresses;
+}
+
+void XsDotHandler::processPackets()
+{
+    for (auto const& device : m_deviceList) {
+        qDebug() << "Starting Measurments for device: " << device->portInfo().bluetoothAddress().toStdString().c_str();
         if (!device->startMeasurement(XsPayloadMode::OrientationEuler)) {
             qDebug() << "Could not put device into measurement mode. Reason: " << m_manager->lastResultText().toStdString().c_str();
             continue;
         }
     }
 
-    processPackets();
-}
-
-void XsDotHandler::processPackets()
-{
     bool orientationResetDone = false;
     int64_t lastOrientationReset = XsTime::timeStampNow();
     while (true) {
-        if (m_callbackHandler->packetsAvailable()) {
-            for (auto const& device : m_deviceList) {
+        for (auto const& device : m_deviceList) {
+            if (m_callbackHandler->packetAvailable(device->portInfo().bluetoothAddress())) {
                 XsDataPacket packet = m_callbackHandler->getNextPacket(device->portInfo().bluetoothAddress());
 
                 if (packet.containsOrientation()) {
@@ -86,7 +94,7 @@ void XsDotHandler::processPackets()
                     int pitchValue = ((euler.pitch() + 180.0) / 360.0) * 128.0;
                     int yawValue = ((euler.yaw() + 180.0) / 360.0) * 128.0;
 
-                    m_mainWindow->updateGui(rollValue, pitchValue, yawValue);
+                    m_mainWindow->updateGui(device->portInfo().bluetoothAddress().toStdString(), rollValue, pitchValue, yawValue);
                 }
             }
         }
