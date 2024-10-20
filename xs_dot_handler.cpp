@@ -87,9 +87,10 @@ void XsDotHandler::processPackets()
 
                 if (packet.containsOrientation()) {
                     XsEuler euler = packet.orientationEuler();
+                    
 
                     int rollValue = ((euler.roll() + 180.0) / 360.0) * 128.0;
-                    int pitchValue = ((euler.pitch() + 180.0) / 360.0) * 128.0;
+                    int pitchValue = ((euler.pitch() + 90) / 180) * 128.0; // Pitch values are between -90 to 90 as opposed to roll & yaw (-180 to 180)
                     int yawValue = ((euler.yaw() + 180.0) / 360.0) * 128.0;
 
                     m_mainWindow->updateGui(device->portInfo().bluetoothAddress().toStdString(), rollValue, pitchValue, yawValue);
@@ -102,7 +103,7 @@ void XsDotHandler::processPackets()
             for (auto const& device : m_deviceList)
             {
                 qDebug() << "Resetting heading for device " << device->portInfo().bluetoothAddress().toStdString().c_str() << ":";
-                if (device->resetOrientation(XRM_Heading) || device->resetOrientation(XRM_Object))
+                if (device->resetOrientation(XRM_Heading) && device->resetOrientation(XRM_Object))
                     qDebug() << "OK";
                 else
                     qDebug() << "NOK: " << device->lastResultText().toStdString().c_str();
