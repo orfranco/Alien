@@ -87,7 +87,6 @@ void XsDotHandler::processPackets()
 
                 if (packet.containsOrientation()) {
                     XsEuler euler = packet.orientationEuler();
-                    
 
                     int rollValue = ((euler.roll() + 180.0) / 360.0) * 128.0;
                     int pitchValue = ((euler.pitch() + 90) / 180) * 128.0; // Pitch values are between -90 to 90 as opposed to roll & yaw (-180 to 180)
